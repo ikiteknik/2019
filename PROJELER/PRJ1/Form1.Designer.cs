@@ -46,11 +46,15 @@
             this.List2 = new System.Windows.Forms.ListBox();
             this.btnkucuktobuyuk = new System.Windows.Forms.Button();
             this.btnbuyuktokucuk = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnformac1 = new System.Windows.Forms.Button();
+            this.btnformac2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +69,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
@@ -128,9 +133,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnRandomUret1);
-            this.groupBox2.Location = new System.Drawing.Point(229, 6);
+            this.groupBox2.Location = new System.Drawing.Point(6, 302);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(167, 56);
+            this.groupBox2.Size = new System.Drawing.Size(213, 56);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Random Sayı Üret";
@@ -155,7 +160,7 @@
             this.groupBox3.Controls.Add(this.btnkucuktobuyuk);
             this.groupBox3.Controls.Add(this.btnEkle1);
             this.groupBox3.Controls.Add(this.txtsirasayi1);
-            this.groupBox3.Location = new System.Drawing.Point(402, 6);
+            this.groupBox3.Location = new System.Drawing.Point(229, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(236, 352);
             this.groupBox3.TabIndex = 5;
@@ -233,6 +238,37 @@
             this.btnbuyuktokucuk.UseVisualStyleBackColor = true;
             this.btnbuyuktokucuk.Click += new System.EventHandler(this.btnbuyuktokucuk_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnformac2);
+            this.groupBox4.Controls.Add(this.btnformac1);
+            this.groupBox4.Location = new System.Drawing.Point(6, 196);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(217, 98);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Form Açma";
+            // 
+            // btnformac1
+            // 
+            this.btnformac1.Location = new System.Drawing.Point(12, 22);
+            this.btnformac1.Name = "btnformac1";
+            this.btnformac1.Size = new System.Drawing.Size(174, 23);
+            this.btnformac1.TabIndex = 0;
+            this.btnformac1.Text = "FORM AC";
+            this.btnformac1.UseVisualStyleBackColor = true;
+            this.btnformac1.Click += new System.EventHandler(this.btnformac1_Click);
+            // 
+            // btnformac2
+            // 
+            this.btnformac2.Location = new System.Drawing.Point(12, 52);
+            this.btnformac2.Name = "btnformac2";
+            this.btnformac2.Size = new System.Drawing.Size(174, 23);
+            this.btnformac2.TabIndex = 0;
+            this.btnformac2.Text = "FORM AC 2";
+            this.btnformac2.UseVisualStyleBackColor = true;
+            this.btnformac2.Click += new System.EventHandler(this.btnformac2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +286,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -274,6 +311,9 @@
         private System.Windows.Forms.Button btnEkle1;
         private System.Windows.Forms.TextBox txtsirasayi1;
         private System.Windows.Forms.Button btnbuyuktokucuk;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnformac2;
+        private System.Windows.Forms.Button btnformac1;
     }
 }
 

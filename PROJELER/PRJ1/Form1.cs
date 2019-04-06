@@ -183,5 +183,20 @@ namespace PRJ1
             }
 
         }
+
+        private void btnformac1_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+        }
+
+        private void btnformac2_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+            this.Hide();
+        }
+
+     
     }
 }
