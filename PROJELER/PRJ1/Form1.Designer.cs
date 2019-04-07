@@ -49,13 +49,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtsayi2 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnmaashesap = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.lstboxorj = new System.Windows.Forms.ListBox();
+            this.btnveridoldur = new System.Windows.Forms.Button();
+            this.lstboxkalitim = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -262,13 +269,29 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.Gray;
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.btnveridoldur);
+            this.tabPage2.Controls.Add(this.lstboxkalitim);
+            this.tabPage2.Controls.Add(this.lstboxorj);
+            this.tabPage2.Controls.Add(this.btnmaashesap);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(862, 526);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnmaashesap
+            // 
+            this.btnmaashesap.Location = new System.Drawing.Point(19, 21);
+            this.btnmaashesap.Name = "btnmaashesap";
+            this.btnmaashesap.Size = new System.Drawing.Size(168, 35);
+            this.btnmaashesap.TabIndex = 0;
+            this.btnmaashesap.Text = "Maas Hesapla";
+            this.btnmaashesap.UseVisualStyleBackColor = true;
+            this.btnmaashesap.Click += new System.EventHandler(this.btnmaashesap_Click);
             // 
             // label4
             // 
@@ -282,6 +305,50 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "https://github.com/ikiteknik/2019";
             // 
+            // lstboxorj
+            // 
+            this.lstboxorj.FormattingEnabled = true;
+            this.lstboxorj.Location = new System.Drawing.Point(19, 118);
+            this.lstboxorj.Name = "lstboxorj";
+            this.lstboxorj.Size = new System.Drawing.Size(186, 238);
+            this.lstboxorj.TabIndex = 1;
+            // 
+            // btnveridoldur
+            // 
+            this.btnveridoldur.Location = new System.Drawing.Point(19, 373);
+            this.btnveridoldur.Name = "btnveridoldur";
+            this.btnveridoldur.Size = new System.Drawing.Size(406, 51);
+            this.btnveridoldur.TabIndex = 2;
+            this.btnveridoldur.Text = "Verileri Doldur";
+            this.btnveridoldur.UseVisualStyleBackColor = true;
+            this.btnveridoldur.Click += new System.EventHandler(this.btnveridoldur_Click);
+            // 
+            // lstboxkalitim
+            // 
+            this.lstboxkalitim.FormattingEnabled = true;
+            this.lstboxkalitim.Location = new System.Drawing.Point(239, 118);
+            this.lstboxkalitim.Name = "lstboxkalitim";
+            this.lstboxkalitim.Size = new System.Drawing.Size(186, 238);
+            this.lstboxkalitim.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "ORJINAL";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(236, 102);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "KALITIMALAN";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +356,7 @@
             this.ClientSize = new System.Drawing.Size(894, 576);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -301,6 +369,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,6 +400,12 @@
         private System.Windows.Forms.Button btnformac2;
         private System.Windows.Forms.Button btnformac1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnmaashesap;
+        private System.Windows.Forms.ListBox lstboxorj;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnveridoldur;
+        private System.Windows.Forms.ListBox lstboxkalitim;
     }
 }
 

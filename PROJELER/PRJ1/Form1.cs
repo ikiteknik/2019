@@ -196,7 +196,41 @@ namespace PRJ1
             Form2 f = new Form2();
             f.Show();
             this.Hide();
-        }        
+        }
 
+        private void btnmaashesap_Click(object sender, EventArgs e)
+        {
+            MaasHesapla mm = new MaasHesapla();
+            
+
+            ProtectedKullananClass xx = new ProtectedKullananClass();
+
+            xx.Hesapla();
+        }
+
+        private void btnveridoldur_Click(object sender, EventArgs e)
+        {
+            lstboxorj.Items.Clear();
+            Random rnd = new Random();
+
+            List<Orjinal> liste = new List<Orjinal>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                int numara=rnd.Next(1, 110000);
+                Orjinal obje = new Orjinal();
+                int c = rnd.Next(65, 91);
+                Char x = Convert.ToChar(c);
+
+                obje.Ad = x.ToString();
+                obje.Numara = numara;
+                liste.Add(obje);            }
+
+            foreach (var item in liste)
+            {
+                lstboxorj.Items.Add(item.Ad + "----" + item.Numara);
+            }
+
+        }
     }
 }
