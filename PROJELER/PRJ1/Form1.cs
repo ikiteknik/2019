@@ -17,6 +17,7 @@ namespace PRJ1
             InitializeComponent();
         }
 
+
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             string okunan = e.KeyChar.ToString().ToUpper();
@@ -39,18 +40,18 @@ namespace PRJ1
                 int y = Convert.ToInt32(txtsayi2.Text);
 
                 if (okunan == "T")
-                {                 
-                    MessageBox.Show((x+y).ToString());
+                {
+                    MessageBox.Show((x + y).ToString());
                 }
 
                 if (okunan == "Ç")
-                {                  
-                    MessageBox.Show((x*y).ToString());
+                {
+                    MessageBox.Show((x * y).ToString());
                 }
             }
-                
 
-           
+
+
         }
 
         private void txtsayi1_KeyPress(object sender, KeyPressEventArgs e)
@@ -77,7 +78,7 @@ namespace PRJ1
         private void btnRandomUret1_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int x=rnd.Next(0, 100);
+            int x = rnd.Next(0, 100);
             btnRandomUret1.Text = x.ToString();
 
         }
@@ -99,7 +100,7 @@ namespace PRJ1
             }
         }
 
-      
+
         private void btnbuyuktokucuk_Click(object sender, EventArgs e)
         {
             int gecici;
@@ -110,7 +111,7 @@ namespace PRJ1
                 int x = Convert.ToInt32(List1.Items[i]);
 
                 for (int k = i; k < List1.Items.Count; k++)
-                {                  
+                {
                     int y = Convert.ToInt32(List1.Items[k]);
                     if (x < y)
                     {
@@ -150,8 +151,8 @@ namespace PRJ1
             {
                 int x = Convert.ToInt32(List1.Items[i]);
 
-                for (int k =i; k < List1.Items.Count; k++)
-                {                  
+                for (int k = i; k < List1.Items.Count; k++)
+                {
                     int y = Convert.ToInt32(List1.Items[k]);
 
                     if (x > y)
@@ -197,6 +198,7 @@ namespace PRJ1
             this.Hide();
         }
 
-     
+
+
     }
 }
