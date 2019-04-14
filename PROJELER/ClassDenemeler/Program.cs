@@ -7,22 +7,41 @@ using System.Windows.Forms;
 
 namespace ClassDenemeler
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("class ogrenme");
 
+
+            #region clas1
             Ogrenci ogr1 = new Ogrenci();
             ogr1.OgrenciAdi = "huseyin";
             ogr1.OgrenciSoyadi = "Atmaca";
-
-
             int sonc = ogr1.ToplamaMetod(8, 9);
             string sonc1 = ogr1.ToplamaMetod("8","9");
+            #endregion
 
-            Console.WriteLine(sonc.ToString());
-            Console.WriteLine(sonc1.ToString());
+
+            #region dersler
+
+            Matematik m = new Matematik();
+            m.DersAdi = "mat1";
+            m.DersNotu = 99;
+            // Console.WriteLine(m.DersAdi + ":" + m.DersNotuYazdir());
+            Console.WriteLine(m.OrtakVeriYAzdir());
+
+
+
+            Fizik f = new Fizik();
+            f.DersNotu = 77;
+            f.DersAdi = "fizik1";
+           // Console.WriteLine(f.DersAdi +":" +  f.DersNotuYazdir());
+            Console.WriteLine(f.OrtakVeriYAzdir());
+            #endregion
+
+            //Console.WriteLine(sonc.ToString());
+            //Console.WriteLine(sonc1.ToString());
             Console.ReadKey();
         }
     }
@@ -70,6 +89,8 @@ namespace ClassDenemeler
         }
 
     }
+
+
 
 
 }

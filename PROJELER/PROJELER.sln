@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kalitim", "Kalitim", "{DFBC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalitim", "Kalitim\Kalitim.csproj", "{6B4BF144-F755-4E15-A04D-83A393309FD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenelProje", "GenelProje\GenelProje.csproj", "{A768E867-CA89-4633-87D8-04EA7C6B42E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{6B4BF144-F755-4E15-A04D-83A393309FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B4BF144-F755-4E15-A04D-83A393309FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B4BF144-F755-4E15-A04D-83A393309FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A768E867-CA89-4633-87D8-04EA7C6B42E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A768E867-CA89-4633-87D8-04EA7C6B42E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A768E867-CA89-4633-87D8-04EA7C6B42E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A768E867-CA89-4633-87D8-04EA7C6B42E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
