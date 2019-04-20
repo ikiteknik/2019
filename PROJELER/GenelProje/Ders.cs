@@ -8,27 +8,29 @@ namespace GenelProje
 {
     public class Ders
     {
-        public dersler DersAdi { get; set;}
+        public Dersler DersAdi { get; set;}
         public double VizeNotu1 { get; set; }
         public double VizeNotu2 { get; set; }
         public double FinalNotu { get; set; }
 
 
 
-        public double OrtalamaHesapla(double v1,double v2,double final)
+        public double OrtalamaHesapla()
         {
-            double sonuc = 0;
+            double ortalama = (VizeNotu1 * 30 / 100) + (VizeNotu2 * 30 / 100) + (FinalNotu * 40 / 100);
+            return ortalama;
+        }
 
-            return sonuc;
+
+        public enum Dersler
+        {
+            Matematik,
+            Fen,
+            Fizik,
+            Beden
         }
     }
 
 
-    public enum dersler
-    {
-        Matematik,
-        Fen,
-        Fizik,
-        Beden
-    }
+
 }
