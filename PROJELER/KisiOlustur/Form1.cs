@@ -92,5 +92,26 @@ namespace KisiOlustur
                 w.ShowDialog();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ogrenci s = new Ogrenci();
+           
+            
+
+        }
+
+        private void txtad_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void txtad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+             e.KeyChar.ToString().ToUpper();
+           
+
+        }
     }
 }

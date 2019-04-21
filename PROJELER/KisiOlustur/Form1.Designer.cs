@@ -47,6 +47,7 @@
             this.btnresim = new System.Windows.Forms.Button();
             this.txttcno = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +77,8 @@
             this.txtad.Name = "txtad";
             this.txtad.Size = new System.Drawing.Size(178, 20);
             this.txtad.TabIndex = 2;
+            this.txtad.TextChanged += new System.EventHandler(this.txtad_TextChanged);
+            this.txtad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtad_KeyPress);
             // 
             // txtsoyad
             // 
@@ -209,11 +212,22 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "TCNO";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(503, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 65);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "ÖĞRENCİ SAY";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 522);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnresim);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -263,6 +277,7 @@
         private System.Windows.Forms.Button btnresim;
         private System.Windows.Forms.TextBox txttcno;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }
 

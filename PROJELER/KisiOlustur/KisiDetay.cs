@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,20 @@ namespace KisiOlustur
 
         public KisiDetay(Ogrenci obj)
         {
-            //this.tcno = tcno;
             InitializeComponent();
+            lblad.Text = obj.Ad;
+            lblsoyad.Text = obj.Soyad;
+            lbldogumtar.Text = obj.DogumTar.ToShortDateString();
+            lblorta.Text = obj.Ortamala.ToString();
             lbltcno.Text = obj.TcNo;
+            picturekisi.ImageLocation = obj.ImagePath;
 
+       
         }
 
-
-
-
+        private void ptnYazdir_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }
