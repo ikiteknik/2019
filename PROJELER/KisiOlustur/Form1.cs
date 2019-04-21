@@ -34,6 +34,7 @@ namespace KisiOlustur
 
             x.Ad = txtad.Text;
             x.Soyad = txtsoyad.Text;
+            x.TcNo = txttcno.Text;
             x.DersAdi = cbdersler.Text;   // combobox dan aldık veriyi
             x.DogumTar = dateTimePicker1.Value; // date time picker den aldık veriyi
 
@@ -53,13 +54,15 @@ namespace KisiOlustur
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = liste;
+
+
+            ResimKaydet(txttcno.Text);
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ResimKaydet(string p)
         {
-            int row = dataGridView1.CurrentRow.Index;
-
-            dataGridView1.Select();
+            Bitmap b = new Bitmap(imageloc);
+            b.Save(@"D:\HuseyinAtmaca\Github\PROJELER\KisiOlustur\KisiResimler\" + p +".jpg");
         }
 
         private void btnresim_Click(object sender, EventArgs e)
@@ -70,6 +73,23 @@ namespace KisiOlustur
             {
                 imageloc = d.FileName;
                 pictureBox1.ImageLocation = imageloc;
+            }
+        }
+
+   
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                var ss = row.Cells["Ad"].Value.ToString();
+                var tcno = row.Cells["TcNo"].Value.ToString();
+
+                Ogrenci secilenogr=liste.Where(x => x.TcNo == tcno).FirstOrDefault();
+
+                KisiDetay w = new KisiDetay(secilenogr);
+         
+                w.ShowDialog();
             }
         }
     }

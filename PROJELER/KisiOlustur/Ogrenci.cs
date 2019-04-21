@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KisiOlustur
 {
-    class Ogrenci
+    public class Ogrenci
     {
         public string Ad { get; set; }
         public string Soyad { get; set; }
@@ -16,7 +16,7 @@ namespace KisiOlustur
         public double Vize2 { get; set; }
         public double Final { get; set; }
         public double Ortamala { get; set; }
-
+        public string TcNo { get; set; }
         public string ImagePath { get; set;}
 
     }
