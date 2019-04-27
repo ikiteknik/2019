@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRJ1", "PRJ1\PRJ1.csproj", "{6F15D096-7CE8-45A2-B4C6-4B25C559B20C}"
 EndProject
@@ -16,6 +16,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenelProje", "GenelProje\GenelProje.csproj", "{A768E867-CA89-4633-87D8-04EA7C6B42E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KisiOlustur", "KisiOlustur\KisiOlustur.csproj", "{054D0FB5-29DA-48F0-8113-3AE9AF4FC77B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasslarTekrar", "ClasslarTekrar\ClasslarTekrar.csproj", "{EE965BB6-741A-4679-A608-5A5F685446D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalitim2", "Kalitim2\Kalitim2.csproj", "{4676D512-35EE-4B31-8045-CD26DA58E5B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deconst", "deconst\deconst.csproj", "{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +49,18 @@ Global
 		{054D0FB5-29DA-48F0-8113-3AE9AF4FC77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{054D0FB5-29DA-48F0-8113-3AE9AF4FC77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{054D0FB5-29DA-48F0-8113-3AE9AF4FC77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE965BB6-741A-4679-A608-5A5F685446D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE965BB6-741A-4679-A608-5A5F685446D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE965BB6-741A-4679-A608-5A5F685446D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE965BB6-741A-4679-A608-5A5F685446D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4676D512-35EE-4B31-8045-CD26DA58E5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4676D512-35EE-4B31-8045-CD26DA58E5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4676D512-35EE-4B31-8045-CD26DA58E5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4676D512-35EE-4B31-8045-CD26DA58E5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
