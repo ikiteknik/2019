@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalitim2", "Kalitim2\Kaliti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deconst", "deconst\deconst.csproj", "{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Odevler", "Odevler", "{323A92C3-5436-417A-A615-723F00C1E7CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uygulama1", "Uygulama1\Uygulama1.csproj", "{D7DD1718-0863-4AEE-9938-A019CF52CA08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,10 @@ Global
 		{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F1D8EA1-67B1-4830-85DE-0C9029FD90D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7DD1718-0863-4AEE-9938-A019CF52CA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7DD1718-0863-4AEE-9938-A019CF52CA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7DD1718-0863-4AEE-9938-A019CF52CA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7DD1718-0863-4AEE-9938-A019CF52CA08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +76,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B2FFE586-DE16-4EB9-8E59-3A419BCFC8F1} = {EFF47018-4DF6-437E-841E-34FE03F44CC8}
 		{6B4BF144-F755-4E15-A04D-83A393309FD6} = {DFBC9AD5-8232-4A68-B08C-8149A883ED61}
+		{D7DD1718-0863-4AEE-9938-A019CF52CA08} = {323A92C3-5436-417A-A615-723F00C1E7CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A21459D9-E22E-4931-8FE6-19F800181E54}
