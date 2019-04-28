@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 262);
+            this.ClientSize = new System.Drawing.Size(601, 253);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnkaydet);
             this.Controls.Add(this.cbindirim);
