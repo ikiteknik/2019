@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LOKANTAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KISILER">
+          <Key>
+            <PropertyRef Name="KisiKey" />
+          </Key>
+          <Property Name="KisiKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YetkiTip" Type="tinyint" Nullable="false" />
+          <Property Name="KisiAdi" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="KisiSoyadi" Type="varchar" MaxLength="50" />
+          <Property Name="AktifMi" Type="bit" Nullable="false" />
+          <Property Name="EPosta" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TcNo" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="TTYetki">
+          <Key>
+            <PropertyRef Name="YetkiKey" />
+          </Key>
+          <Property Name="YetkiKey" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YetkiAdi" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LOKANTAModelStoreContainer">
+          <EntitySet Name="KISILER" EntityType="Self.KISILER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TTYetki" EntityType="Self.TTYetki" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LOKANTAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KISILER">
+          <Key>
+            <PropertyRef Name="KisiKey" />
+          </Key>
+          <Property Name="KisiKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YetkiTip" Type="Byte" Nullable="false" />
+          <Property Name="KisiAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KisiSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AktifMi" Type="Boolean" Nullable="false" />
+          <Property Name="EPosta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TTYetki">
+          <Key>
+            <PropertyRef Name="YetkiKey" />
+          </Key>
+          <Property Name="YetkiKey" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YetkiAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LOKANTAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KISILER" EntityType="Self.KISILER" />
+          <EntitySet Name="TTYetki" EntityType="Self.TTYetki" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LOKANTAModelStoreContainer" CdmEntityContainer="LOKANTAEntities">
+          <EntitySetMapping Name="KISILER">
+            <EntityTypeMapping TypeName="LOKANTAModel.KISILER">
+              <MappingFragment StoreEntitySet="KISILER">
+                <ScalarProperty Name="KisiKey" ColumnName="KisiKey" />
+                <ScalarProperty Name="YetkiTip" ColumnName="YetkiTip" />
+                <ScalarProperty Name="KisiAdi" ColumnName="KisiAdi" />
+                <ScalarProperty Name="KisiSoyadi" ColumnName="KisiSoyadi" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+                <ScalarProperty Name="EPosta" ColumnName="EPosta" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="TcNo" ColumnName="TcNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TTYetki">
+            <EntityTypeMapping TypeName="LOKANTAModel.TTYetki">
+              <MappingFragment StoreEntitySet="TTYetki">
+                <ScalarProperty Name="YetkiKey" ColumnName="YetkiKey" />
+                <ScalarProperty Name="YetkiAdi" ColumnName="YetkiAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
