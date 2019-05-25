@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_ClientMaster.cshtml";
 }
+@model List<WebBitirmeProjesi.DbEntity.HABER>
 
 <h2>CLİENT ANASAYFA</h2>
 
@@ -11,25 +12,119 @@
 
 <br />
 
+<div class="col-md-6">
 
-<div class="col-md-6 col-md-offset-6">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>HABERLER</h5>
+        </div>
+        <div class="ibox-content">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>BAŞLIK</th>
+                        <th>İÇERİK</th>
+                        <th>SİL</th>
+                        <th>sil 2</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (WebBitirmeProjesi.DbEntity.HABER obj in Model)
+                    {
+                    <tr>
+                        <td>@obj.HaberId</td>
+                        <td>@obj.HaberBaslik</td>
+                        <td>@obj.HaberIcerik</td>
+                        <td>@Html.ActionLink("sil", "DeleteHaber", "Anasayfa" ,new {id= @obj.HaberId }, htmlAttributes: null)</td>
+
+                        <td>@Html.ActionLink("Delete", "DeleteHaber", new { id = @obj.HaberId},new { onclick = "return confirm('silecenmi');" })</td>
+                   
+                    </tr>
+
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    <div>
+
+        <hr />
+
+        <ul>
+            @foreach (WebBitirmeProjesi.DbEntity.HABER obj in ViewBag.Liste)
+            {
+            <li>HAber ID :    @obj.HaberId</li>
+            <li>Haber Başlık : @obj.HaberBaslik</li>
+            <li>Haber İçerik : @obj.HaberIcerik</li>
+            }
+        </ul>
+
+
+
+
+
+
+        <hr />
+
+
+        @using (Html.BeginForm("Kaydet", "Anasayfa", FormMethod.Post))
+        {
+
+        <div class="row">
+
+            <div class="col-lg-4 col-sm-6">
+                <input type="text" id="txtadi" name="txtadi" /><br />
+                <input type="text" id="txtsoyad" name="txtsoyad" /><br />
+                <button type="submit">KAYDET</button>
+            </div>
+        </div>
+
+        }
+
+        <hr />
+
+        @using (Html.BeginForm("KaydetModel", "Anasayfa", FormMethod.Post))
+        {
+
+            //WebBitirmeProjesi.DbEntity.HABER viewModel
+            //= (WebBitirmeProjesi.DbEntity.HABER)ViewBag.MainLayoutViewModel;
+
+            <input type="text" id="HaberBaslik" name="HaberBaslik" /><br />
+            <input type="text" id="HaberIcerik" name="HaberIcerik" /><br />
+            <input type="text" id="HaberOnyazi" name="HaberOnyazi" /><br />
+
+            <button type="submit">KAYDET HABER</button>
+        }
+
+    </div>
+
+</div>
+
+
+<div class="col-md-6">
     <div class="ibox">
-        <div class="ibox-content">          
+        <div class="ibox-content">
             <div class="text-center article-title">
                 <span class="text-muted"><i class="fa fa-clock-o"></i>@DateTime.Now</span>
                 <h1>
-                   @ViewBag.Baslik
+                    @ViewBag.Baslik
                 </h1>
             </div>
             @ViewBag.Icerik
-          
+
             <hr>
-       
+
+
+
         </div>
     </div>
 </div>
 
 
-
-
- 

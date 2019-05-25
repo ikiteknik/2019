@@ -11,15 +11,24 @@
     <title>Login</title>
 </head>
 <body style="background-color:orange">
+
     <div style="width:70%;height:90%; text-align:center;margin:auto;margin-top:10%">
 
-        <input type="text" style="width:200px" placeholder="Kullanıcı Adı"/>
+        @using (Html.BeginForm("Login", "Anasayfa", FormMethod.Post))
+        {
+        <input type="text" name="mail" style="width:200px" placeholder="mail" />
         <br />
-        <input type="text" style="width:200px;margin-top:20px" placeholder="Şifre" />
+        <input type="text" name="sifre" style="width:200px;margin-top:20px" placeholder="Şifre" />
         <br />
-        <button>ADMINA GIT</button>
+        <button type="submit">LOGİN OL</button>
         <br />
-        <a  href="~/Home/Index">Admin Sayfasını Aç</a>
+        }
+        <hr />
+        <a href="~/Home/Index">Admin Sayfasını Aç</a>
+
+
+
+
 
     </div>
 </body>

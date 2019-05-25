@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebBitirmeProjesi.DbEntity;
 
 namespace WebBitirmeProjesi.Controllers
 {
@@ -10,6 +11,19 @@ namespace WebBitirmeProjesi.Controllers
     {
         public ActionResult Index()
         {
+            //if (kisiKey > 0)
+            //{
+            //    YetkiBS s = new YetkiBS();
+            //    KISILER kisi = s.KisiBilgileriGetir(kisiKey);
+
+            //    ViewBag.adi = kisi.KisiAdi;
+            //    return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login", "Anasayfa");
+            //}
+
             return View();
         }
 

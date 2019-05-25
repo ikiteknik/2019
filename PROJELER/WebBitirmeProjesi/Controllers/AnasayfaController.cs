@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebBitirmeProjesi.DbEntity;
 
 namespace WebBitirmeProjesi.Controllers
@@ -10,6 +11,8 @@ namespace WebBitirmeProjesi.Controllers
     public class AnasayfaController : Controller
     {
         // GET: Anasayfa
+        public HABER MainLayoutViewModel { get; set; }
+
         public ActionResult Index()
         {
             LOKANTAEntities db = new LOKANTAEntities();
@@ -21,15 +24,87 @@ namespace WebBitirmeProjesi.Controllers
 
             ViewBag.Icerik = habericerk;
             ViewBag.Baslik = haberbaslik;
+            ViewBag.Liste = y;
 
 
+            //MainLayoutViewModel = new HABER();
+            //ViewBag.MainLayoutViewModel = MainLayoutViewModel;
+            // ViewData["MainLayoutViewModel"] =MainLayoutViewModel;
 
-            return View();
+
+            return View(y);
         }
 
         public ActionResult Login()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Login(string sifre, string mail)
+        {
+
+            YetkiBS yet = new YetkiBS();
+            int kisiKey = yet.YetkiliMi(sifre, mail);
+
+            if (kisiKey > 0)
+            {
+                // return Redirect("~/Home/Index");
+                FormsAuthentication.SetAuthCookie(kisiKey.ToString(), false);
+                //return RedirectToAction("Index", "Home", new { kisiKey = kisiKey });
+                return RedirectToAction("Index", "Home");
+
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult Kaydet(string txtadi, string txtsoyad)
+        {
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+
+        public ActionResult KaydetModel(HABER p)
+        {
+            HABER s = new HABER();
+            s.HaberBaslik = p.HaberBaslik;
+            s.HaberIcerik = p.HaberIcerik;
+            s.HaberOnyazi = p.HaberOnyazi;
+            s.HaberTuru = 1;
+            s.YayinlanmaTarihi = DateTime.Now;
+
+            LOKANTAEntities db = new LOKANTAEntities();
+            db.HABER.Add(s);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult DeleteHaber(int id)
+        {
+
+            if (id != null &&  id > 0)
+            {
+                LOKANTAEntities db = new LOKANTAEntities();
+                HABER silinecek = db.HABER.Where(x => x.HaberId == id).FirstOrDefault();
+                db.HABER.Remove(silinecek);
+                db.SaveChanges();
+            }
+
+
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
     }
 }
