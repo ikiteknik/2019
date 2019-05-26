@@ -11,20 +11,32 @@ namespace WebBitirmeProjesi.Controllers
     {
         public ActionResult Index()
         {
-            //if (kisiKey > 0)
-            //{
-            //    YetkiBS s = new YetkiBS();
-            //    KISILER kisi = s.KisiBilgileriGetir(kisiKey);
 
-            //    ViewBag.adi = kisi.KisiAdi;
-            //    return View();
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Login", "Anasayfa");
-            //}
+            if (Session[Helper.Sabitler.SessionKisiKey] == null 
+                        || string.IsNullOrEmpty(Session[Helper.Sabitler.SessionKisiKey].ToString()))
+            {
+                return RedirectToAction("Login", "Anasayfa");
+            }
+            else
+            {
+                string kisiKey = Session[Helper.Sabitler.SessionKisiKey].ToString();
 
-            return View();
+                if (Convert.ToInt32(kisiKey) > 0)
+                {
+                    YetkiBS s = new YetkiBS();
+                    KISILER kisi = s.KisiBilgileriGetir(Convert.ToInt32(kisiKey));
+
+                    ViewBag.adi = kisi.KisiAdi;
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Login", "Anasayfa");
+                }
+            }
+
+
+            /// return View();
         }
 
         public ActionResult About()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -40,6 +41,12 @@ namespace WebBitirmeProjesi.Controllers
             return View();
         }
 
+        public ActionResult Logout()
+        {
+            Session[Helper.Sabitler.SessionKisiKey] = null;
+            return RedirectToAction("Login", "Anasayfa");
+        }
+
         [HttpPost]
         public ActionResult Login(string sifre, string mail)
         {
@@ -50,8 +57,10 @@ namespace WebBitirmeProjesi.Controllers
             if (kisiKey > 0)
             {
                 // return Redirect("~/Home/Index");
-                FormsAuthentication.SetAuthCookie(kisiKey.ToString(), false);
+                // FormsAuthentication.SetAuthCookie(kisiKey.ToString(), false);
                 //return RedirectToAction("Index", "Home", new { kisiKey = kisiKey });
+                Session[Helper.Sabitler.SessionKisiKey] = kisiKey.ToString();
+
                 return RedirectToAction("Index", "Home");
 
             }
@@ -90,7 +99,7 @@ namespace WebBitirmeProjesi.Controllers
         public ActionResult DeleteHaber(int id)
         {
 
-            if (id != null &&  id > 0)
+            if (id != null && id > 0)
             {
                 LOKANTAEntities db = new LOKANTAEntities();
                 HABER silinecek = db.HABER.Where(x => x.HaberId == id).FirstOrDefault();
@@ -103,6 +112,27 @@ namespace WebBitirmeProjesi.Controllers
         }
 
 
+        public ActionResult UpdateHaber(int id)
+        {
+            LOKANTAEntities db = new LOKANTAEntities();
+            HABER updatedilecekhaber = db.HABER.Where(x => x.HaberId == id).FirstOrDefault();
+
+            return View(updatedilecekhaber);
+        }
+
+
+        [HttpPost]
+        public ActionResult UpdateHaber(HABER hbr)
+        {
+
+            LOKANTAEntities db = new LOKANTAEntities();
+
+            db.HABER.Attach(hbr);
+            db.Entry(hbr).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index", "Anasayfa");
+
+        }
 
 
 

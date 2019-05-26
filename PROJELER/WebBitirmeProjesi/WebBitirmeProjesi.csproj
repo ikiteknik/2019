@@ -197,6 +197,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Sabitler.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -648,6 +649,7 @@
     <Content Include="Views\Shared\_ClientMaster.cshtml" />
     <Content Include="Views\Anasayfa\Index.cshtml" />
     <Content Include="Views\Anasayfa\Login.cshtml" />
+    <Content Include="Views\Anasayfa\UpdateHaber.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

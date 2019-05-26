@@ -19,8 +19,8 @@
     <link href="~/Content/MyTema/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
     <link href="~/Content/MyTema/css/animate.css" rel="stylesheet">
     <link href="~/Content/MyTema/css/style.css" rel="stylesheet">
-
-
+    <link href="~/Content/MyTema/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="~/Content/MyTema/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
 
 
 </head>
@@ -38,7 +38,7 @@
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                     <span class="block m-t-xs">
-                                        <strong class="font-bold">David Williams</strong>
+                                        <strong class="font-bold">@ViewBag.adi</strong>
                                     </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
                                 </span>
                             </a>
@@ -47,15 +47,17 @@
                                 <li><a href="contacts.html">Contacts</a></li>
                                 <li><a href="mailbox.html">Mailbox</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li>@RenderSection("sayfaozel",false)</li>
+
+
                             </ul>
                         </div>
                         <div class="logo-element">
-                            IN+
+                            IN+                          
                         </div>
                     </li>
-                
-             
+
+
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">İçerik Düzenleme</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -67,17 +69,19 @@
                             <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
                         </ul>
                     </li>
-                   
+
                     <li>
                         <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Galeri Düzenleme</span> </a>
-                    </li>        
-               
-                    <li>
-                        <a href="css_animation.html"><i class="fa fa-magic"></i>
-                         <span class="nav-label">İletişim Düzenleme </span></a>
                     </li>
 
-                   
+                    <li>
+                        <a href="css_animation.html">
+                            <i class="fa fa-magic"></i>
+                            <span class="nav-label">İletişim Düzenleme </span>
+                        </a>
+                    </li>
+
+
                 </ul>
             </div>
         </nav>
@@ -193,7 +197,7 @@
                         </li>
 
                         <li>
-                            <a href="login.html">
+                            <a href="~/Anasayfa/Logout">
                                 <i class="fa fa-sign-out"></i> Log out
                             </a>
                         </li>
@@ -267,21 +271,46 @@
     <!-- Image cropper -->
     <script src="~/Content/MyTema/js/plugins/cropper/cropper.min.js"></script>
 
+
+
+    <!-- SUMMERNOTE -->
+    <script src="~/Content/MyTema/js/plugins/summernote/summernote.min.js"></script>
     <script>
         $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+
+            $('.summernote').summernote();
+
+        });
+        var edit = function() {
+            $('.click2edit').summernote({focus: true});
+        };
+        var save = function() {
+            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+            $('.click2edit').destroy();
+        };
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
 
             var $image = $(".image-crop > img")
             $($image).cropper({
                 aspectRatio: 1.618,
                 preview: ".img-preview",
-                done: function(data) {
+                done: function (data) {
                     // Output the result data for cropping image.
                 }
             });
 
             var $inputImage = $("#inputImage");
             if (window.FileReader) {
-                $inputImage.change(function() {
+                $inputImage.change(function () {
                     var fileReader = new FileReader(),
                             files = this.files,
                             file;
@@ -306,27 +335,27 @@
                 $inputImage.addClass("hide");
             }
 
-            $("#download").click(function() {
+            $("#download").click(function () {
                 window.open($image.cropper("getDataURL"));
             });
 
-            $("#zoomIn").click(function() {
+            $("#zoomIn").click(function () {
                 $image.cropper("zoom", 0.1);
             });
 
-            $("#zoomOut").click(function() {
+            $("#zoomOut").click(function () {
                 $image.cropper("zoom", -0.1);
             });
 
-            $("#rotateLeft").click(function() {
+            $("#rotateLeft").click(function () {
                 $image.cropper("rotate", 45);
             });
 
-            $("#rotateRight").click(function() {
+            $("#rotateRight").click(function () {
                 $image.cropper("rotate", -45);
             });
 
-            $("#setDrag").click(function() {
+            $("#setDrag").click(function () {
                 $image.cropper("setDragMode", "crop");
             });
 
@@ -387,22 +416,22 @@
             var divStyle = $('.back-change')[0].style;
             $('#demo_apidemo').colorpicker({
                 color: divStyle.backgroundColor
-            }).on('changeColor', function(ev) {
-                        divStyle.backgroundColor = ev.color.toHex();
-                    });
+            }).on('changeColor', function (ev) {
+                divStyle.backgroundColor = ev.color.toHex();
+            });
 
 
         });
         var config = {
-                '.chosen-select'           : {},
-                '.chosen-select-deselect'  : {allow_single_deselect:true},
-                '.chosen-select-no-single' : {disable_search_threshold:10},
-                '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-                '.chosen-select-width'     : {width:"95%"}
-            }
-            for (var selector in config) {
-                $(selector).chosen(config[selector]);
-            }
+            '.chosen-select': {},
+            '.chosen-select-deselect': { allow_single_deselect: true },
+            '.chosen-select-no-single': { disable_search_threshold: 10 },
+            '.chosen-select-no-results': { no_results_text: 'Oops, nothing found!' },
+            '.chosen-select-width': { width: "95%" }
+        }
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        }
 
         $("#ionrange_1").ionRangeSlider({
             min: 0,
@@ -461,28 +490,28 @@
             behaviour: 'tap',
             connect: 'upper',
             range: {
-                'min':  20,
-                'max':  80
+                'min': 20,
+                'max': 80
             }
         });
 
         $("#range_slider").noUiSlider({
-            start: [ 40, 60 ],
+            start: [40, 60],
             behaviour: 'drag',
             connect: true,
             range: {
-                'min':  20,
-                'max':  80
+                'min': 20,
+                'max': 80
             }
         });
 
         $("#drag-fixed").noUiSlider({
-            start: [ 40, 60 ],
+            start: [40, 60],
             behaviour: 'drag-fixed',
             connect: true,
             range: {
-                'min':  20,
-                'max':  80
+                'min': 20,
+                'max': 80
             }
         });
 

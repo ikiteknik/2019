@@ -39,9 +39,9 @@
                         <td>@obj.HaberBaslik</td>
                         <td>@obj.HaberIcerik</td>
                         <td>@Html.ActionLink("sil", "DeleteHaber", "Anasayfa" ,new {id= @obj.HaberId }, htmlAttributes: null)</td>
-
                         <td>@Html.ActionLink("Delete", "DeleteHaber", new { id = @obj.HaberId},new { onclick = "return confirm('silecenmi');" })</td>
-                   
+                        <td>@Html.ActionLink("Update", "UpdateHaber", new { id = @obj.HaberId }, htmlAttributes: null)</td>
+
                     </tr>
 
                     }
@@ -54,39 +54,6 @@
 
 
     <div>
-
-        <hr />
-
-        <ul>
-            @foreach (WebBitirmeProjesi.DbEntity.HABER obj in ViewBag.Liste)
-            {
-            <li>HAber ID :    @obj.HaberId</li>
-            <li>Haber Başlık : @obj.HaberBaslik</li>
-            <li>Haber İçerik : @obj.HaberIcerik</li>
-            }
-        </ul>
-
-
-
-
-
-
-        <hr />
-
-
-        @using (Html.BeginForm("Kaydet", "Anasayfa", FormMethod.Post))
-        {
-
-        <div class="row">
-
-            <div class="col-lg-4 col-sm-6">
-                <input type="text" id="txtadi" name="txtadi" /><br />
-                <input type="text" id="txtsoyad" name="txtsoyad" /><br />
-                <button type="submit">KAYDET</button>
-            </div>
-        </div>
-
-        }
 
         <hr />
 
